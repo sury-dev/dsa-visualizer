@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+body{
+    background-image: url("./download.jpeg");
+    background-size: contain;
+    /* background-position: center; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-repeat: no-repeat; */
+}
+.container{
+    height: 90%;
+    width: 90%;
+    /* border: 2px solid white; */
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 50px rgba(0, 255, 255, 0.5), inset 0px 0px 20px rgba(0, 255, 255, 0.5); */
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.header ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.header ul li a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+}
+.header ul li{
+    padding: 5px 10px;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+}
+.header ul li:hover{
+    transform: scale(1.1);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#visualizationArea{
+    /* display: none; */
+    margin-top: 20px;
+    width: 90%;
+    height: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes riseUp {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        /* height: 100%; */
+        opacity: 1;
+    }
+}
+
+.menu-row1{
+    height: 30px;
+    margin-bottom: 10px;
+}
+.menu-row2{
+    height: 30px;
+    margin-bottom: 10px;
+}
+#arrayValue{
+    background: transparent;
+    height: 100%;
+    width: 120px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid greenyellow;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+#searchValue{
+    background: transparent;
+    height: 100%;
+    width: 120px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid aqua;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+
+.menu-btn{
+    height: 100%;
+    background: transparent;
+    padding: 0px 10px;
+    border: 2px solid var(--color);
+    color: var(--color);
+    border-radius: 5px;
+    margin:0px 5px;
+    transition: 0.3s ease;
+}
+.menu-btn:hover{
+    transform: scale(1.1);
+    border: 2px solid var(--color);
+    background-color: var(--color);
+    color: var(--color2);
+}
+
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: calc(100% - 110px);
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.array-element {
+    margin: 0 5px;
+    width: 40px;
+    background:linear-gradient(indigo,violet);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    transition: height 0.5s, background-color 0.5s;
+    border: 2px solid white;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: height 0.5s, opacity 0.5s;
+}
+
+.array-element.added {
+    animation: riseUp 0.5s forwards;
+}
+
+/* LINKED-LIST STYLING */
+
+#listValue{
+    background: transparent;
+    height: 100%;
+    width: 120px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+#positionValue{
+    background: transparent;
+    height: 100%;
+    width: 140px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+.linked-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid white;
+    height: 100%;
+}
+
+.list-node{
+    margin: 0 5px;
+    padding: 15px;
+    background:linear-gradient(indigo,violet);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: height 0.5s, background-color 0.5s;
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.arrow {
+    width: 30px;
+    height: 10px;
+    clip-path: polygon(0 44%, 62% 45%, 60% 0%, 100% 50%, 60% 100%, 62% 53%, 0 55%);
+    background-color: white;
+    margin-left: -5px;
+}
+
+.bypass-arrow {
+    width: 30px;
+    height: 10px;
+    clip-path: polygon(0 44%, 62% 45%, 60% 0%, 100% 50%, 60% 100%, 62% 53%, 0 55%);
+    background-color: white;
+    margin-left: -5px;
+    transform: rotate(-45deg);
+}
+
+.bypass-arrow2 {
+    width: 30px;
+    height: 10px;
+    clip-path: polygon(0 44%, 62% 45%, 60% 0%, 100% 50%, 60% 100%, 62% 53%, 0 55%);
+    background-color: white;
+    margin-left: -5px;
+    transform: rotate(45deg);
+}
+
+
+#stackValue{
+    background: transparent;
+    height: 100%;
+    width: 140px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+.stack-container {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.stack-element {
+    margin-bottom: 5px;
+    text-align: center;
+    min-width: 100px;
+    background:linear-gradient(indigo,violet);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    transition: height 0.5s, background-color 0.5s;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+
+#queueValue{
+    background: transparent;
+    height: 100%;
+    width: 140px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+
+.queue-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid white;
+    margin-top: 20px;
+}
+
+.queue-element {
+    margin: 0px 5px;
+    text-align: center;
+    min-width: 40px;
+    background:linear-gradient(indigo,violet);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+    /* transition: 0.5s ease; */
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.queue-element.enqueue {
+    animation: fadeInUp 0.5s forwards;
+}
+
+.queue-element.dequeue {
+    animation: fadeOutDown 0.5s forwards;
+    opacity: 0; /* Ensure the element is invisible after the animation */
+}
+
+
+/* CSS for Tree Visualization */
+
+.tree-container {
+    border: 2px solid white;
+    height: 100%;
+}
+
+.tree-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tree-node {
+    background: transparent;
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tree-node p{
+    background:linear-gradient(indigo,violet);
+    border: 2px solid white;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+#treeValue{
+    background: transparent;
+    height: 100%;
+    width: 140px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    text-align: center;
+    color: white;
+    margin: 0px 5px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
